@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background-color: #f8f6fb;
+            color: #514064;
+            line-height: 1.7;
+        }
+
+        header {
+            background-color: #dcd0ea;
+            text-align: center;
+            padding: 25px 15px;
+            border-bottom: 2px solid #bda9d2;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        nav {
+            margin-top: 12px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #514064;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #8b6ca8;
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 85%;
+            max-width: 850px;
+            margin: 35px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border: 1px solid #d8c9e8;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(81, 64, 100, 0.08);
+        }
+
+        h2 {
+            color: #65517d;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #d8c9e8;
+            padding-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #cbb9dc;
+            border-radius: 5px;
+            background-color: #fcfaff;
+            color: #514064;
+            font-family: Georgia, serif;
+            font-size: 15px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #8b6ca8;
+        }
+
+        button {
+            display: block;
+            margin: 22px auto 0;
+            padding: 11px 30px;
+            background-color: #dcd0ea;
+            color: #514064;
+            border: 1px solid #bda9d2;
+            border-radius: 5px;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #cbb9dc;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 15px;
+            color: #65517d;
+        }
+
+        footer {
+            background-color: #dcd0ea;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+            border-top: 2px solid #bda9d2;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Contact Me</h1>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="biodata.html">Biodata</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <section class="card">
+        <h2>Get In Touch</h2>
+
+        <form id="contactForm">
+
+            <label for="name">Your Name:</label>
+            <input type="text" id="name"
+                   placeholder="Enter your name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email"
+                   placeholder="Enter your email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" rows="5"
+                      placeholder="Write your message here..."
+                      required></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
+
+        <p id="result"></p>
+    </section>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Annapoorna S Hasabi | All Rights Reserved</p>
+</footer>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        document.getElementById("result").textContent =
+            "Thank you! Your message has been entered successfully.";
+
+        this.reset();
+    });
+</script>
+
+</body>
+</html>
